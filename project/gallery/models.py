@@ -59,7 +59,7 @@ class Upvote(models.Model):
     is_collaborator = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.post
+        return self.post.title
 
 
 class Comment(models.Model):
