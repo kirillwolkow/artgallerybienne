@@ -44,7 +44,7 @@ class Post(models.Model):
         return self.title
 
 
-class Upvotes(models.Model):
+class Upvote(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,   
@@ -62,7 +62,7 @@ class Upvotes(models.Model):
         return self.post
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,   
