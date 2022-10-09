@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
+
+from custom_auth.models import User
 
 
 TYPE_CHOICES = [
@@ -16,10 +18,7 @@ TYPE_CHOICES = [
 
 
 class Post(models.Model):
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,   
-    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(
         max_length=150, 
