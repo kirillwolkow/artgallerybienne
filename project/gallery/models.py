@@ -22,7 +22,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(
         _('title'),
-        max_length=150, 
+        max_length=150,
         unique=True,
         help_text="Choose a title for your artwork. It can't be longer than 150 characters and is unique.",
         )
@@ -49,7 +49,7 @@ class Post(models.Model):
 class Upvote(models.Model):
     user = models.ForeignKey(
         User,
-        on_delete=models.CASCADE,   
+        on_delete=models.CASCADE,
     )
     post = models.ForeignKey(
         Post,
@@ -67,7 +67,7 @@ class Upvote(models.Model):
 class Comment(models.Model):
     user = models.ForeignKey(
         User,
-        on_delete=models.CASCADE,   
+        on_delete=models.CASCADE,
     )
     post = models.ForeignKey(
         Post,
