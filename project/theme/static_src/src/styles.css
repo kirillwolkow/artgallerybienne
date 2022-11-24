@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .main-title {
+        @apply text-black font-normal text-[42px] leading-[53px] text-center;
+    }
+}
