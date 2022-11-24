@@ -19,7 +19,8 @@
         </button>
         {% else %}
         <button
-            class="uppercase inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0">sign up
+            class="uppercase inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0">
+            <a href="{% url 'signup' %}">sign up</a>
         </button>
         {% endif %}
     </div>
