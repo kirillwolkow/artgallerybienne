@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Sign Up | artgallery-bienne.ch{% endblock title %}
-
 {% block content %}
 
-<section id="signup-section">
-    <div class="container max-w-7xl mx-auto flex flex-col items-center justify-center">
+<main id="signup-section">
+    <div class="max-w-7xl mx-auto flex flex-col items-center justify-center">
         <div>
-            <h1 class="main-title">welcome to art gallery bienne</h1>
+            <h2 class="main-title">welcome to art gallery bienne</h1>
             <p class="text-blue-500">ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum</p>
         </div>
         <div>
@@ -22,6 +20,6 @@
             <p>Already have an account? <a href="{% url 'login' %}">LOGIN</a></p>
         </div>
     </div>
-</section>
+</main>
 
 {% endblock content %}
