@@ -7,4 +7,8 @@
     .main-title {
         @apply text-black font-normal text-[42px] leading-[53px] text-center;
     }
+
+    .center-paragraph {
+        @apply font-serif text-center font-normal text-lg leading-[163%];
+    }
 }
