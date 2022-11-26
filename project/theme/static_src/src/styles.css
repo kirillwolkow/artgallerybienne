@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .main-title {
+        @apply text-black font-sans font-normal text-[42px] leading-[53px] text-center;
+    }
+
+    .center-paragraph {
+        @apply font-serif text-center font-normal text-lg leading-[163%];
+    }
+
+    input {
+        @apply rounded-lg;
+    }
+
+    input::placeholder {
+        @apply w-full font-serif font-normal text-lg leading-7 text-black-steel;
+    }
+
+    .signup-form {
+        @apply w-full;
+    }
+}
