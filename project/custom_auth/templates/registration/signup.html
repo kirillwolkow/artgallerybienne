@@ -4,20 +4,28 @@
 {% block content %}
 
 <main id="signup-section" class="max-w-7xl py-20 mx-auto">
-    <div class="grid grid-cols-12 grid-rows-3 place-content-start px-[60px] gap-x-[30px]">
+    <div class="grid grid-cols-12 place-content-start px-[60px] gap-x-[30px]">
         <div class="col-start-4 col-end-10 row-span-full">
             <h2 class="main-title">welcome to art gallery bienne</h1>
             <p class="center-paragraph my-6">ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum</p>
         </div>
         <div class="my-6 col-start-5 col-end-9">
-            <form method="post">
+            <form method="post" class="w-full">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Signup</button>
+                {% for field in form %}
+                <div class="w-full my-6 rounded-sm">
+                    <p>{{ field.errors }}</p>
+                    <p class="font-normal text-black-steel font-serif text-lg leading-[160%]">{{ field }} {% if field.name == "is_artist" %} {{ field.label }} {% endif %}</p>
+                </div>
+                {% endfor %}
+                <button class="text-white font-normal font-serif text-lg leading-7 w-full bg-gold-leaf rounded-sm py-2" type="submit">Signup</button>
             </form>
         </div>
-        <div class="col-start-5 col-end-9">
+        <div class="col-start-5 col-end-9 mt-8 text-center">
             <p>Already have an account? <a href="{% url 'login' %}">LOGIN</a></p>
+        </div>
+        <div class="col-start-4 col-end-10 text-sm text-center mt-20">
+            <p>By signing up for artgallery bienne, you agree to our terms of service.</p>
         </div>
     </div>
 </main>
