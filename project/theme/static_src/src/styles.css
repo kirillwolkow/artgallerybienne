@@ -20,7 +20,8 @@
         @apply w-full font-serif font-normal text-lg leading-7 text-black-steel;
     }
 
-    .signup-form {
+    .signup-form,
+    .login-form {
         @apply w-full;
     }
 }

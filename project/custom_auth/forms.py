@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django import forms
 
 
@@ -19,3 +19,9 @@ class CustomUserCreationForm(UserCreationForm):
         self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control w-full rounded-sm', 'placeholder': 'Password'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control w-full rounded-sm', 'placeholder': 'Confirm Password'})
         self.fields['is_artist'].label = "I'm an artist"
+
+
+class CustomerUserChangeForm(UserChangeForm):
+    class Meta:
+        model = get_user_model()
+        fields = ("email", "password")
