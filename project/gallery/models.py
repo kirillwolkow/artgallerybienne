@@ -40,7 +40,7 @@ class Post(models.Model):
         )
     file = models.FileField(_('file'), upload_to='artworks/')
     is_stage = models.BooleanField(default=True)
-    is_showroom = models.BooleanField(default=False)
+    is_showroom = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
