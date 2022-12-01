@@ -1,7 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext as _
+from django.conf import settings
 
-from custom_auth.models import User
+User = settings.AUTH_USER_MODEL
 
 PAINTING = "PAI"
 DRAWING = "DRA"

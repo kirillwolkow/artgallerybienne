@@ -7,7 +7,6 @@ class ArtCreateForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = [
-            "user",
             "title",
             "description",
             "art_type",

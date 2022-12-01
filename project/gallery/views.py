@@ -15,3 +15,7 @@ class ArtCreate(CreateView):
     form_class = ArtCreateForm
     template_name = "gallery/art_create.html"
     success_url = "/"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
