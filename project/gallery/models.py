@@ -3,17 +3,26 @@ from django.utils.translation import gettext as _
 
 from custom_auth.models import User
 
+PAINTING = "PAI"
+DRAWING = "DRA"
+SCULPTURE = "SCU"
+ARCHITECTURE = "ARC"
+LITERATURE = "LIT"
+MUSIC = "MUS"
+THEATER = "THE"
+DANCE = "DAN"
+CINEMA = "CIN"
 
 TYPE_CHOICES = [
-        ('Painting', _('Painting')),
-        ('Drawing', _('Drawing')),
-        ('Sculpture', _('Sculpture')),
-        ('Architecture', _('Architecture')),
-        ('Literature', _('Literature')),
-        ('Music', _('Music')),
-        ('Theater', _('Theater')),
-        ('Dance', _('Dance')),
-        ('Cinema', _('Cinema')),
+        (PAINTING, _('Painting')),
+        (DRAWING, _('Drawing')),
+        (SCULPTURE, _('Sculpture')),
+        (ARCHITECTURE, _('Architecture')),
+        (LITERATURE, _('Literature')),
+        (MUSIC, _('Music')),
+        (THEATER, _('Theater')),
+        (DANCE, _('Dance')),
+        (CINEMA, _('Cinema')),
     ]
 
 
@@ -32,13 +41,19 @@ class Post(models.Model):
         null=True,
         blank=True,
     )
-    type = models.CharField(
-        _('type'),
+    art_type = models.CharField(
+        _('art type'),
         max_length=150,
         choices=TYPE_CHOICES,
+        default=PAINTING,
         help_text="Choose your type of art.",
+        blank=True,
         )
-    file = models.FileField(_('file'), upload_to='artworks/')
+    file = models.FileField(
+        _('file'),
+        upload_to='artworks/%Y/%m/%d/',
+        blank=True, null=True
+    )
     is_stage = models.BooleanField(default=True)
     is_showroom = models.BooleanField(default=True)
 

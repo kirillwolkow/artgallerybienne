@@ -6,4 +6,10 @@ from gallery.models import Post
 class ArtCreateForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = "__all__"
+        fields = [
+            "user",
+            "title",
+            "description",
+            "art_type",
+            "file",
+        ]
