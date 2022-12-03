@@ -12,3 +12,9 @@ class ArtCreateForm(forms.ModelForm):
             "art_type",
             "file",
         ]
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'title*'}),
+            'description': forms.Textarea(attrs={'class': 'w-full rounded-sm', 'placeholder': 'description (max. 300 words)*'}),
+            'art_type': forms.Select(attrs={'class': 'w-full rounded-sm', 'placeholder': 'select art form*'}),
+            'file': forms.FileInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'upload a file*'}),
+        }
