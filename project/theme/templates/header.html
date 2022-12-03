@@ -11,9 +11,13 @@
             {% if not user.is_authenticated %}
             <a href="{% url 'login' %}" class="mr-5">login</a>
             {% endif %}
+            {% if user.is_authenticated %}
+            <a href="#" class="mr-5">PROFILE</a>
+            <button
+            class="uppercase inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0 mr-5">
+            <a href="{% url 'art-create' %}">Submit art</a>
+        </button>
         </nav>
-        {% if user.is_authenticated %}
-        <p class="mr-5">Welcome, {{ user.first_name }}</p>
         <button>
             <a href="{% url 'logout' %}" class="text-white">Logout</a>
         </button>

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="submit-section relative">
+    <main id="art-create-section" class="max-w-7xl py-20 mx-auto">
+        <div class="grid grid-cols-12 place-content-start grid-rows-3 px-[60px] gap-x-[30px]">
+            <div class="col-start-4 col-end-10 row-span-full row-span-1">
+                <h2 class="main-title">submit your art</h1>
+            </div>
+            <div class="my-6 col-start-5 col-end-9 mb-40">
+                <form method="post" class="w-full" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="w-full my-6 rounded-sm">
+                        <p>{{ field.errors }}</p>
+                        <p class="font-normal text-black-steel font-serif text-lg leading-[160%]">
+                            {{ field }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    <button class="text-white font-normal font-serif text-lg leading-7 w-full bg-gold-leaf rounded-sm py-2 mt-16" type="submit">submit</button> 
+                </form>
+            </div>
+        </div>
+        <div class="grid grid-cols-12 place-content-start grid-rows-3 mt-24 px-[60px] gap-x-[30px]">
+            <div class="col-start-4 col-end-10 row-span-full row-span-1">
+                <h2 class="main-title">how to submit your art / faq</h1>
+            </div>
+            <div class="my-6 mb-40 col-start-4 col-end-10">
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus maur</p>
+                <p class="mb-4">is ultrices eros in cursus turpis massa tincidunt. Mattis molestie a iaculis at erat. Pulvinar mattis nunc sed blandit. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Eget magna fermentum iaculi</p>
+                <p class="mb-4">s eu non diam. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Cursus euismod quis viverra nibh. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Vivamus at augue eget arcu.</p>
+            </div>
+        </div>
+    </main>
+</section>
+
+{% endblock content %}
