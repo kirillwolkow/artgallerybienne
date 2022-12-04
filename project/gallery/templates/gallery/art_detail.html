@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="list-section relative">
+    <main id="art-list-section" class="max-w-7xl py-20 mx-auto">
+        <div class="grid grid-cols-12 place-content-start px-[60px] gap-x-[30px]">
+            <div class="col-start-4 col-end-10 mb-28">
+                <h2 class="main-title">show room</h2>
+                <p>ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum</p>
+            </div>
+            <div class="my-6 col-start-3 col-end-11">
+                    {{ post.title }}
+            </div>
+        </div>
+    </main>
+</section>
+
+{% endblock content %}

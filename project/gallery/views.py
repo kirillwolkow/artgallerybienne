@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
 from gallery.models import Post
@@ -28,3 +29,9 @@ class ArtListView(ListView):
     template_name = "gallery/art_list.html"
     context_object_name = "posts"
     ordering = ["-created_at"]
+
+
+class ArtDetailView(DetailView):
+    model = Post
+    template_name = "gallery/art_detail.html"
+    context_object_name = "post"
