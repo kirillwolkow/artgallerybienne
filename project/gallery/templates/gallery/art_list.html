@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="list-section relative">
+    <main id="art-list-section" class="max-w-7xl py-20 mx-auto">
+        <div class="grid grid-cols-12 place-content-start px-[60px] gap-x-[30px]">
+            <div class="col-start-4 col-end-10 mb-28">
+                <h2 class="main-title">show room</h2>
+                <p>ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum</p>
+            </div>
+            <div class="my-6 col-start-3 col-end-11">
+                {% for post in posts %}
+                    <div class="w-full mb-20 flex flex-col">
+                        <span class="mb-8">
+                            <img src="#" alt="">
+                            <p class="font-sans font-normal text-4xl leading-10">{{ post.user|lower }}</p>
+                        </span>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdailyfunfactsblog.weebly.com%2Fuploads%2F3%2F1%2F0%2F2%2F31026779%2F2568585_orig.jpg&f=1&nofb=1&ipt=46e052c382537ee04ecd3a27ba3a782200f63ab24c117e6cb6f0b0174c824ed2&ipo=images" alt="" width="869" height="395" class="mb-14 rounded-sm">
+                        <div></div>
+                        <hr>
+                        <p class="font-serif mt-3 mb-8 line-clamp-3">{{ post.description }}</p>
+                        <div>
+                            <button
+                                class="inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-4 focus:outline-none rounded-sm text-base mt-4 mr-6 md:mt-0">
+                                <a href="#">View Art</a>
+                            </button>
+                            <button
+                                class="inline-flex items-center bg-white text-gold-leaf border border-gold-leaf py-1 px-4 focus:outline-none rounded-sm text-base mt-4 md:mt-0">
+                                <a href="#">View Artist</a>
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</section>
+
+{% endblock content %}

@@ -5,8 +5,8 @@
             <span class="text-xl text-gold-leaf">art gallery bienne</span>
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-lg leading-8 italic font-normal justify-center uppercase">
-            <a href="/" class="mr-5">show room</a>
-            <a href="/" class="mr-5">stage room</a>
+            <a href="{% url 'art-list' %}" class="mr-5">show room</a>
+            <!-- <a href="/" class="mr-5">stage room</a> -->
             <a href="/" class="mr-5">about us</a>
             {% if not user.is_authenticated %}
             <a href="{% url 'login' %}" class="mr-5">login</a>
