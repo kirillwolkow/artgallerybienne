@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero-section relative">
+    <img class="opacity-60 h-[1024px] w-full" src="{% static 'gallery/images/hero_image2.webp' %}" alt="Picture of Museum Gallery">
+    <div class="w-full h-screen flex text-center items-center justify-center absolute top-0">
+        <h1 class="absolute top-1/3 font-sans font-medium text-9xl leading-[161px] z-10">
+            art gallery bienne
+        </h1>
+        <span>
+            <a href="#main-section"><img class="absolute left-1/2 -translate-x-1/2 top-3/4 z-10" src="{% static 'gallery/images/hero_button.svg' %}" alt="Arrow Button"></a>
+        </span>
+    </div>
+</section>
+
+<main class="max-w-7xl py-20 mx-auto" id="main-section">
+    <div class="grid grid-cols-12 place-content-start px-[60px] gap-x-[30px]">
+        <div class="col-start-2 col-end-10 mb-20">
+            <h2 class="font-sans font-medium text-4xl leading-10 mb-4">what is art gallery bienne?</h2>
+            <p class="font-serif font-normal text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Mattis molestie a iaculis at erat. Pulvinar mattis nunc sed blandit. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Eget magna fermentum iaculis eu non diam. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Cursus euismod quis viverra nibh. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Vivamus at augue eget arcu.</p>
+        </div>
+        <div class="col-start-4 col-end-12 mb-20">
+            <h2 class="font-sans font-medium text-4xl leading-10 mb-4 text-right">how can you submit your art?</h2>
+            <p class="font-serif font-normal text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Mattis molestie a iaculis at erat. Pulvinar mattis nunc sed blandit. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Eget magna fermentum iaculis eu non diam. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Cursus euismod quis viverra nibh. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Vivamus at augue eget arcu.</p>
+        </div>
+        <div class="col-start-2 col-end-10 mb-20">
+            <h2 class="font-sans font-medium text-4xl leading-10 mb-4">how can you vote for art pieces?</h2>
+            <p class="font-serif font-normal text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Mattis molestie a iaculis at erat. Pulvinar mattis nunc sed blandit. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Eget magna fermentum iaculis eu non diam. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Cursus euismod quis viverra nibh. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Vivamus at augue eget arcu.</p>
+        </div>
+        <div class="col-start-4 col-end-12 mb-20">
+            <h2 class="font-sans font-medium text-4xl leading-10 mb-4 text-right">who we are</h2>
+            <p class="font-serif font-normal text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Mattis molestie a iaculis at erat. Pulvinar mattis nunc sed blandit. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Eget magna fermentum iaculis eu non diam. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Cursus euismod quis viverra nibh. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Vivamus at augue eget arcu.</p>
+        </div>
+        <div class="col-start-2 col-end-10 mb-20">
+            <h2 class="font-sans font-medium text-4xl leading-10 mb-4">vision?</h2>
+            <p class="font-serif font-normal text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Mattis molestie a iaculis at erat. Pulvinar mattis nunc sed blandit. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Eget magna fermentum iaculis eu non diam. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Cursus euismod quis viverra nibh. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Vivamus at augue eget arcu.</p>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}
