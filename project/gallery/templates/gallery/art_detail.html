@@ -7,11 +7,41 @@
     <main id="art-list-section" class="max-w-7xl py-20 mx-auto">
         <div class="grid grid-cols-12 place-content-start px-[60px] gap-x-[30px]">
             <div class="col-start-4 col-end-10 mb-28">
-                <h2 class="main-title">show room</h2>
-                <p>ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum</p>
+                <h2 class="main-title">{{ post.title }}</h2>
             </div>
-            <div class="my-6 col-start-3 col-end-11">
-                    {{ post.title }}
+            <div class="my-6 col-start-3 col-end-11 w-full mb-14">
+                <div class="w-full grid grid-cols-3">
+                    <img src="" alt="" class="col-start-1 col-end-2">
+                    <span class="text-black font-sans font-normal text-4xl leading-10 col-start-2 col-end-3">{{ post.user }}</span>
+                    <span class="text-black font-serif font-normal text-lg text-right leading-10 ml-10 col-start-3 col-end-4">{{ post.created_at }}</span>
+                </div>
+                <div>
+                    <img src="{{ post.file.url }}" alt="" class="mb-14 rounded-sm">
+                </div>
+                <div></div>
+                <hr>
+                <p class="font-serif mt-3 mb-8 line-clamp-3">{{ post.description }}</p>
+                <div>
+                    <button
+                        class="inline-flex items-center bg-white text-gold-leaf border border-gold-leaf py-1 px-4 focus:outline-none rounded-sm text-base mt-4 md:mt-0">
+                        <a href="#">View Artist</a>
+                    </button>
+                </div>
+            </div>
+            <div></div>
+            <hr>
+            <div class="col-start-3 col-end-11">
+                <h3 class="font-sans text-black font-normal text-3xl leading-8 text-center mb-8">
+                    what are your thoughts?
+                </h3>
+                <div class="w-full grid grid-cols-3">
+                    <img src="" alt="" class="col-start-1 col-end-2">
+                    <span class="text-black font-sans font-normal text-lg leading-6 uppercase tracking-widest col-start-2 col-end-3">@profilename</span>
+                    <span class="text-black font-serif font-normal text-lg leading-10 col-start-3 col-end-4 text-right">4 hrs ago</span>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do etiam dign consequat nisl vel pretium lectus quam id leo in. Tortor id aliquet lectus proin nibh. Odio eu feugiat pretium nibh ipsum. Dui vivamus arcu felis bibendum ut.
+                </p>
             </div>
         </div>
     </main>

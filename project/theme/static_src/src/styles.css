@@ -8,6 +8,10 @@
         @apply text-black font-sans font-normal text-[42px] leading-[53px] text-center;
     }
 
+    .art-title {
+        @apply font-sans font-normal text-[42px] leading-[52px] text-center;
+    }
+
     .center-paragraph {
         @apply font-serif text-center font-normal text-lg leading-[163%];
     }
