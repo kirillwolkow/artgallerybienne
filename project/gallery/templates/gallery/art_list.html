@@ -17,14 +17,14 @@
                             <img src="#" alt="">
                             <p class="font-sans font-normal text-4xl leading-10">{{ post.user|lower }}</p>
                         </span>
-                        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdailyfunfactsblog.weebly.com%2Fuploads%2F3%2F1%2F0%2F2%2F31026779%2F2568585_orig.jpg&f=1&nofb=1&ipt=46e052c382537ee04ecd3a27ba3a782200f63ab24c117e6cb6f0b0174c824ed2&ipo=images" alt="" width="869" height="395" class="mb-14 rounded-sm">
+                        <img src="{{ post.file.url }}" alt="" width="869" height="395" class="mb-14 rounded-sm">
                         <div></div>
                         <hr>
                         <p class="font-serif mt-3 mb-8 line-clamp-3">{{ post.description }}</p>
                         <div>
                             <button
                                 class="inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-4 focus:outline-none rounded-sm text-base mt-4 mr-6 md:mt-0">
-                                <a href="#">View Art</a>
+                                <a href="{% url 'art' post.pk %}">View Art</a>
                             </button>
                             <button
                                 class="inline-flex items-center bg-white text-gold-leaf border border-gold-leaf py-1 px-4 focus:outline-none rounded-sm text-base mt-4 md:mt-0">
