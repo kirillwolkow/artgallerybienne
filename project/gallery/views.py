@@ -12,6 +12,10 @@ def index(request):
     return render(request, 'gallery/index.html')
 
 
+def about_us_view(request):
+    return render(request, 'gallery/about_us.html')
+
+
 class ArtCreate(CreateView):
     model = Post
     form_class = ArtCreateForm
