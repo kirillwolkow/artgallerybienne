@@ -18,7 +18,14 @@
                 <div>
                     <img src="{{ post.file.url }}" alt="" class="mb-14 rounded-sm">
                 </div>
-                <div></div>
+                <div>
+                    <ul class="flex flex-wrap text-lg leading-8 italic font-normal">
+                        <li class="font-serif font-normal text-base leading-7 mr-4">{{ upvotes }}</li>
+                        <li class="mx-5"><img src="{% static 'gallery/images/upvote.svg' %}" alt="" class="w-[35px] h-[35px]"></li>
+                        <li class="font-serif font-normal text-base leading-7">{{ upvotes }}</li>
+                        <li><img src="{% static 'gallery/images/comment.svg' %}" alt="" class="w-[35px] h-[35px]"></li>
+                    </ul>
+                </div>
                 <hr>
                 <p class="font-serif mt-3 mb-8 line-clamp-3">{{ post.description }}</p>
                 <div>

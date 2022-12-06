@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 from custom_auth.models import User
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
-from gallery.models import Post
+from gallery.models import Post, Upvote
 from gallery.forms import ArtCreateForm
 
 
@@ -48,3 +48,8 @@ class ArtDetailView(DetailView):
     model = Post
     template_name = "gallery/art_detail.html"
     context_object_name = "post"
+
+    def get_context_data(self, **kwargs):
+        context = super(ArtDetailView, self).get_context_data(**kwargs)
+        context['upvotes'] = Upvote.objects.filter(post_id=19).count()
+        return context
