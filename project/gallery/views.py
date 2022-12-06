@@ -20,7 +20,8 @@ def about_us_view(request):
 
 def user_profile(request, pk):
     user = User.objects.get(id=pk)
-    context = {'user': user}
+    posts = Post.objects.all().filter(user_id=user.id).order_by('-created_at')
+    context = {'user': user, 'posts': posts}
     return render(request, "gallery/profile.html", context)
 
 

@@ -3,10 +3,37 @@
 
 {% block content %}
 
-<section class="list-section relative">
-    <main id="art-list-section" class="max-w-7xl py-20 mx-auto">
+<section class="profile-section relative">
+    <main id="profile-section" class="max-w-7xl py-20 mx-auto">
         <div class="grid grid-cols-12 place-content-start px-[60px] gap-x-[30px]">
-            {{ user.first_name }} {{ user.last_name }}
+            <div class="col-start-3 col-end-11">
+                <div class="w-full grid grid-cols-2">
+                    <img src="#" alt="User Avatar" class="w-[192px] h-[192px] mb-7 col-start-1 col-end-2">
+                    <span class="font-serif font-normal text-base leading-8 font-black text-right col-start-2 col-end-3">joined on {{ user.date_joined }}</span>
+                </div>
+                <h2 class="font-sans font-normal text-3xl leading-7 text-left mb-4">@{{ user.first_name|lower }}{{ user.last_name|lower }}</h2>
+                <h3 class="font-sans font-normal text-2xl leading-6 mb-5">
+                    {% if user.is_artist %}
+                    artist
+                    {% elif user.is_enthusiast %}
+                    enthusiast
+                    {% elif user.is_collaborator %}
+                    collaborator
+                    {% endif %}
+                </h3>
+                <p class="font-sans font-normal text-base leading-8 mb-12">{{ user.bio }}</p>
+                {% for post in posts %}
+                    <h2 class="font-sans font-normal text-3xl leading-8 mb-8">{{ post.title }}</h2>
+                    <img src="{{ post.file.url }}" alt="" class="mb-14 rounded-sm">
+                    <div></div>
+                    <hr>
+                    <p class="font-serif mt-3 mb-8 line-clamp-3">{{ post.description }}</p>
+                    <button
+                        class="inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-4 focus:outline-none rounded-sm text-base mt-4 mr-6 md:mt-0">
+                        <a href="{% url 'art' post.pk %}">View Art</a>
+                    </button>
+                {% endfor %}
+            </div>
         </div>
     </main>
 </section>
