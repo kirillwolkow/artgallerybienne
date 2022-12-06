@@ -17,7 +17,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_artist = models.BooleanField(_('is artist'), default=False)
     is_enthusiast = models.BooleanField(_('is enthusiast'), default=True)
     is_collaborator = models.BooleanField(_('is collaborator'), default=False)
-    avatar = models.ImageField(upload_to='artworks/avatars/%Y/%m/%d/', null=True, blank=True)
+    avatar = models.ImageField(upload_to='artworks/avatars/%Y/%m/%d/', null=True, blank=True, help_text="Upload your avatar.")
     bio = models.TextField(_('bio'), max_length=120, blank=True)
 
     objects = UserManager()
