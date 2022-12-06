@@ -6,11 +6,13 @@ from django import forms
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = get_user_model()
-        fields = ("email", "first_name", "last_name", "password1", "password2", "is_artist")
+        fields = ("email", "first_name", "last_name", "avatar", "bio", "password1", "password2", "is_artist")
         widgets = {
             'email': forms.EmailInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'E-Mail'}),
             'first_name': forms.TextInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'First Name'}),
             'last_name': forms.TextInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'Last Name'}),
+            'Avatar': forms.FileInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'Upload Avatar'}),
+            'bio': forms.TextInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'Bio'}),
             'is_artist': forms.CheckboxInput(),
         }
 
