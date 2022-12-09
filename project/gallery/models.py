@@ -57,6 +57,10 @@ class Post(models.Model):
     )
     is_stage = models.BooleanField(default=True)
     is_showroom = models.BooleanField(default=True)
+    likes = models.ManyToManyField(User, related_name='art_posts', blank=True, null=True)
+
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.title

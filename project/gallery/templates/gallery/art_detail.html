@@ -19,10 +19,17 @@
                     <img src="{{ post.file.url }}" alt="" class="mb-14 rounded-sm">
                 </div>
                 <div>
-                    <ul class="flex flex-wrap text-lg leading-8 italic font-normal">
+                    <ul class="flex flex-wrap items-center text-lg leading-8 italic font-normal mb-2">
+                        <li class="font-serif font-normal text-base leading-7 mr-4">{{ total_likes }}</li>
+                        <li class="mr-7">
+                            <form action="{% url 'like-post' post.pk %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" name="post_id" value="{{ post.id }}">
+                                    <img src="{% static 'gallery/images/upvote.svg' %}" alt="" class="w-[35px] h-[35px]">
+                                </button>
+                            </form>
+                        </li>
                         <li class="font-serif font-normal text-base leading-7 mr-4">{{ upvotes }}</li>
-                        <li class="mx-5"><img src="{% static 'gallery/images/upvote.svg' %}" alt="" class="w-[35px] h-[35px]"></li>
-                        <li class="font-serif font-normal text-base leading-7">{{ upvotes }}</li>
                         <li><img src="{% static 'gallery/images/comment.svg' %}" alt="" class="w-[35px] h-[35px]"></li>
                     </ul>
                 </div>

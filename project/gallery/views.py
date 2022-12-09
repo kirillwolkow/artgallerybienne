@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 from custom_auth.models import User
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
-from gallery.models import Post, Upvote
+from gallery.models import Post
 from gallery.forms import ArtCreateForm
 
 
@@ -23,6 +23,12 @@ def user_profile(request, pk):
     posts = Post.objects.all().filter(user_id=user.id).order_by('-created_at')
     context = {'user': user, 'posts': posts}
     return render(request, "gallery/profile.html", context)
+
+
+def like_view(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return redirect('art-detail', pk=pk)
 
 
 class ArtCreate(CreateView):
@@ -51,5 +57,7 @@ class ArtDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ArtDetailView, self).get_context_data(**kwargs)
-        context['upvotes'] = Upvote.objects.filter(post_id=19).count()
+        likes = get_object_or_404(Post, id=self.kwargs["pk"])
+        total_likes = likes.total_likes()
+        context['total_likes'] = total_likes
         return context
