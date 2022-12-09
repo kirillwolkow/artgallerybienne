@@ -1,6 +1,6 @@
 from django import forms
 
-from gallery.models import Post
+from gallery.models import Post, Comment
 
 
 class ArtCreateForm(forms.ModelForm):
@@ -18,3 +18,11 @@ class ArtCreateForm(forms.ModelForm):
             'art_type': forms.Select(attrs={'class': 'w-full rounded-sm', 'placeholder': 'select art form*'}),
             'file': forms.FileInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'upload a file*'}),
         }
+
+
+class ArtCommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = [
+            "comment",
+        ]

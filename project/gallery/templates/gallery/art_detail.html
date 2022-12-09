@@ -48,6 +48,13 @@
                 <h3 class="font-sans text-black font-normal text-3xl leading-8 text-center mb-8">
                     what are your thoughts?
                 </h3>
+
+                <form action="{% url 'art-detail' post.pk %}" method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit" name="post_id" value="{{ post.id }}">Comment</button>
+                </form>
+
                 {% for comment in post.comments.all %}
                 <div class="w-full grid grid-cols-3">
                     <span class="text-black font-sans font-normal text-lg leading-6 uppercase tracking-widest col-start-1 col-end-3">@{{ comment.user.first_name }}{{ comment.user.last_name }}</span>
