@@ -32,7 +32,7 @@
                     <p class="font-serif mt-3 mb-8 line-clamp-3">{{ post.description }}</p>
                     <button
                         class="inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-4 focus:outline-none rounded-sm text-base mt-4 mr-6 md:mt-0">
-                        <a href="{% url 'art' post.pk %}">View Art</a>
+                        <a href="{% url 'art-detail' post.pk %}">View Art</a>
                     </button>
                 {% endfor %}
             </div>
