@@ -49,10 +49,17 @@
                     what are your thoughts?
                 </h3>
 
-                <form action="{% url 'art-detail' post.pk %}" method="POST">
+                <form action="{% url 'art-detail' post.pk %}" method="POST" class="grid grid-cols-10 gap-x-[30px] content-center mb-12">
                     {% csrf_token %}
-                    {{ form }}
-                    <button type="submit" name="post_id" value="{{ post.id }}">Comment</button>
+                    {% for field in form %}
+                    <div class="w-full my-6 rounded-sm col-start-1 col-end-8">
+                        <p>{{ field.errors }}</p>
+                        <p class="font-normal text-black-steel font-serif text-lg leading-[160%]">
+                            {{ field }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    <button type="submit" name="post_id" value="{{ post.id }}" class="text-white font-normal font-serif text-lg leading-7 w-full bg-gold-leaf rounded-sm py-2 my-6 col-start-8 col-end-11">Comment</button>
                 </form>
 
                 {% for comment in post.comments.all %}

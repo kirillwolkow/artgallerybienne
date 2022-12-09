@@ -26,3 +26,7 @@ class ArtCommentForm(forms.ModelForm):
         fields = [
             "comment",
         ]
+
+        widgets = {
+            'comment': forms.TextInput(attrs={'class': 'w-full rounded-sm', 'placeholder': 'Comment'}),
+        }
