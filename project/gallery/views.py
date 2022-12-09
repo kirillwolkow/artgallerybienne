@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -25,6 +25,12 @@ def user_profile(request, pk):
     return render(request, "gallery/profile.html", context)
 
 
+def like_view(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return redirect('art-detail', pk=pk)
+
+
 class ArtCreate(CreateView):
     model = Post
     form_class = ArtCreateForm
@@ -48,3 +54,10 @@ class ArtDetailView(DetailView):
     model = Post
     template_name = "gallery/art_detail.html"
     context_object_name = "post"
+
+    def get_context_data(self, **kwargs):
+        context = super(ArtDetailView, self).get_context_data(**kwargs)
+        likes = get_object_or_404(Post, id=self.kwargs["pk"])
+        total_likes = likes.total_likes()
+        context['total_likes'] = total_likes
+        return context
