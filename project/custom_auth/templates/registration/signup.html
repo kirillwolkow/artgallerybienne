@@ -10,7 +10,7 @@
             <p class="center-paragraph my-6">ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum</p>
         </div>
         <div class="my-6 col-start-5 col-end-9">
-            <form method="post" class="w-full">
+            <form method="post" class="w-full" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="w-full my-6 rounded-sm">

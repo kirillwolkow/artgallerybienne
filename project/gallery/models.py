@@ -13,6 +13,7 @@ MUSIC = "MUS"
 THEATER = "THE"
 DANCE = "DAN"
 CINEMA = "CIN"
+PHOTOGRAPHY = "PHO"
 
 TYPE_CHOICES = [
         (PAINTING, _('Painting')),
@@ -24,6 +25,7 @@ TYPE_CHOICES = [
         (THEATER, _('Theater')),
         (DANCE, _('Dance')),
         (CINEMA, _('Cinema')),
+        (PHOTOGRAPHY, _('Photography')),
     ]
 
 

@@ -8,7 +8,9 @@
         <div class="grid grid-cols-12 place-content-start px-[60px] gap-x-[30px]">
             <div class="col-start-3 col-end-11">
                 <div class="w-full grid grid-cols-2">
-                    <img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}#{% endif %}" alt="User Avatar" class="w-[192px] h-[192px] mb-7 col-start-1 col-end-2">
+                    {% if user.avatar %}
+                    <img src="{{ user.avatar.url }}" alt="User Avatar" class="w-[192px] h-[192px] mb-7 col-start-1 col-end-2">
+                    {% endif %}
                     <span class="font-serif text-base leading-8 font-black text-right col-start-2 col-end-3">joined on {{ user.date_joined }}</span>
                 </div>
                 <h2 class="font-sans font-normal text-3xl leading-7 text-left mb-4">@{{ user.first_name|lower }}{{ user.last_name|lower }}</h2>
@@ -30,7 +32,7 @@
                     <p class="font-serif mt-3 mb-8 line-clamp-3">{{ post.description }}</p>
                     <button
                         class="inline-flex items-center bg-gold-leaf text-white border-0 py-1 px-4 focus:outline-none rounded-sm text-base mt-4 mr-6 md:mt-0">
-                        <a href="{% url 'art' post.pk %}">View Art</a>
+                        <a href="{% url 'art-detail' post.pk %}">View Art</a>
                     </button>
                 {% endfor %}
             </div>

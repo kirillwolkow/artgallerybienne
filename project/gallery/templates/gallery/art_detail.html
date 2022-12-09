@@ -11,8 +11,7 @@
             </div>
             <div class="my-6 col-start-3 col-end-11 w-full mb-14">
                 <div class="w-full grid grid-cols-3">
-                    <img src="" alt="" class="col-start-1 col-end-2">
-                    <span class="text-black font-sans font-normal text-4xl leading-10 col-start-2 col-end-3">{{ post.user }}</span>
+                    <span class="text-black font-sans font-normal text-4xl leading-10 col-start-1 col-end-3">{{ post.user|lower }}</span>
                     <span class="text-black font-serif font-normal text-lg text-right leading-10 ml-10 col-start-3 col-end-4">{{ post.created_at }}</span>
                 </div>
                 <div>
