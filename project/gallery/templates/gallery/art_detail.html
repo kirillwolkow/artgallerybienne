@@ -29,7 +29,7 @@
                                 </button>
                             </form>
                         </li>
-                        <li class="font-serif font-normal text-base leading-7 mr-4">{{ upvotes }}</li>
+                        <li class="font-serif font-normal text-base leading-7 mr-4">{{ post.comments.count }}</li>
                         <li><img src="{% static 'gallery/images/comment.svg' %}" alt="" class="w-[35px] h-[35px]"></li>
                     </ul>
                 </div>
@@ -48,14 +48,15 @@
                 <h3 class="font-sans text-black font-normal text-3xl leading-8 text-center mb-8">
                     what are your thoughts?
                 </h3>
+                {% for comment in post.comments.all %}
                 <div class="w-full grid grid-cols-3">
-                    <img src="" alt="" class="col-start-1 col-end-2">
-                    <span class="text-black font-sans font-normal text-lg leading-6 uppercase tracking-widest col-start-2 col-end-3">@profilename</span>
-                    <span class="text-black font-serif font-normal text-lg leading-10 col-start-3 col-end-4 text-right">4 hrs ago</span>
+                    <span class="text-black font-sans font-normal text-lg leading-6 uppercase tracking-widest col-start-1 col-end-3">@{{ comment.user.first_name }}{{ comment.user.last_name }}</span>
+                    <span class="text-black font-serif font-normal text-lg leading-10 col-start-3 col-end-4 text-right">{{ comment.created_at }}</span>
                 </div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do etiam dign consequat nisl vel pretium lectus quam id leo in. Tortor id aliquet lectus proin nibh. Odio eu feugiat pretium nibh ipsum. Dui vivamus arcu felis bibendum ut.
+                <p class="mb-12">
+                    {{ comment.comment }}
                 </p>
+                {% endfor %}
             </div>
         </div>
     </main>
